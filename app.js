@@ -1,5 +1,16 @@
 //app.js
+/**
+ * Douban API 模块
+ * @type {Object}
+ */
+const douban = require('./utils/douban.js');
+
 App({
+  /**
+   * Douban Api
+   */
+  douban: douban,
+
   onLaunch: function() {
     //调用API从本地缓存中获取数据
     var logs = wx.getStorageSync('logs') || []

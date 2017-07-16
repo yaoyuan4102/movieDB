@@ -1,0 +1,35 @@
+<!--movie.wxml-->
+<view class="container">
+  <scroll-view class="movie" scroll-y="true">
+    <view class="movie-category">
+      <text class="category-name">近期上映</text>
+      <text class="category-more">更多></text>
+    </view>
+    <scroll-view class="movie-list" scroll-x="true">
+      <view class="movie-item" wx:for="{{comingMovieList}}" wx:for-item="comingMovie" wx:key="index">
+        <image class="movie-thumb" src="{{comingMovie.images.medium}}" mode="aspectFit"/>
+      </view>
+    </scroll-view>
+
+    <view class="movie-category">
+      <text class="category-name">火热上映</text>
+      <text class="category-more">更多></text>
+    </view>
+    <scroll-view class="movie-list" scroll-x="true">
+      <view class="movie-item" wx:for="{{theaterMovieList}}" wx:for-item="theaterMovie" wx:key="index">
+        <image class="movie-thumb" src="{{theaterMovie.images.medium}}" mode="aspectFit"/>
+      </view>
+    </scroll-view>
+
+    <view class="movie-category">
+      <text class="category-name">北美票房榜</text>
+      <text class="category-more">更多></text>
+    </view>
+    <scroll-view class="movie-list" scroll-x="true">
+      <view class="movie-item" wx:for="{{usMovieList}}" wx:for-item="usMovie" wx:key="index">
+        <image class="movie-thumb" src="{{usMovie.images.medium}}" mode="aspectFit"/>
+      </view>
+    </scroll-view>
+
+  </scroll-view>
+</view>

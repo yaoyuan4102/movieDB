@@ -6,8 +6,24 @@
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarBackgroundColor": "#60c55f",
+    "navigationBarTitleText": "豆瓣电影",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "color": "#b8b9b9",
+    "selectedColor": "#60c55f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "text": "榜单",
+        "pagePath": "pages/movie/movie"
+      },
+      {
+        "text": "搜索",
+        "pagePath": "pages/index/index"
+      }
+    ]
   }
 }
