@@ -19,9 +19,7 @@ Page({
    */
   onLoad: function (options) {
     var self = this;
-    self.fetchComingMovies(self.query);
-    self.fetchTheaterMovies(self.query);
-    self.fetchUSMovies(self.query);
+    self.fetchAllMoives();
   },
 
   /**
@@ -56,7 +54,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+
   },
 
   /**
@@ -76,41 +74,46 @@ Page({
   /**
    * Fetch movies
    */
-  fetchComingMovies: function (params) {
+  fetchAllMoives: function () {
+    var self = this;
+    self.fetchComingMovies(self.data.query);
+    self.fetchTheaterMovies(self.data.query);
+    self.fetchUSMovies(self.data.query);
+  },
+
+  fetchComingMovies: function (query) {
     const self = this;
     douban.getComingMovies({
-      params,
+      query,
       success: (res) => {
-        console.log(res);
         self.setData({
           comingMovieList: self.data.comingMovieList.concat(res.data.subjects)
-        })
+        });
+        console.log(self.data.comingMovieList);
       }
     });
   },
 
-  fetchTheaterMovies: function (params) {
+  fetchTheaterMovies: function (query) {
     const self = this;
     douban.getTheaterMovies({
-      params,
+      query,
       success: (res) => {
-        console.log(res);
         self.setData({
           theaterMovieList: self.data.theaterMovieList.concat(res.data.subjects)
-        })
+        });
       }
     });
   },
 
-  fetchUSMovies: function (params) {
+  fetchUSMovies: function (query) {
     const self = this;
-    douban.getComingMovies({
-      params,
+    douban.getUSMovies({
+      query,
       success: (res) => {
-        console.log(res);
         self.setData({
           usMovieList: self.data.usMovieList.concat(res.data.subjects)
-        })
+        });
       }
     });
   }

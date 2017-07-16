@@ -29,15 +29,15 @@ const wxRequest = (params, url) => {
 };
 
 const getComingMovies = (params) => {
-  wxRequest(params, `${URI}/coming_soon?start=${params.start}&count=${params.count}`);
+  wxRequest(params, `${URI}/coming_soon?start=${params.query.start}&count=${params.query.count}`);
 }
 
 const getTheaterMovies = (params) => {
-  wxRequest(params, `${URI}/in_theaters?start=${params.start}&count=${params.count}`);
+  wxRequest(params, `${URI}/in_theaters?start=${params.query.start}&count=${params.query.count}`);
 }
 
 const getUSMovies = (params) => {
-  wxRequest(params, `${URI}/us_box?start=${params.start}&count=${params.count}`);
+  wxRequest(params, `${URI}/us_box?start=${params.query.start}&count=${params.query.count}`);
 }
 
 module.exports = {
